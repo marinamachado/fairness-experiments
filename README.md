@@ -1,4 +1,4 @@
-# Experimentos utilizando diferentes métodos de pré-processamento de _Fairness in Machine Learning_
+# Experimentos: pré-processamento de _Fairness in Machine Learning_
 
 
 ## Detalhes
