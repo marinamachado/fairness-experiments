@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 2. Rodar o notebook run_experiments e definir quais bases e quais métodos de pré-processamento serão utilizados
 ```
-jupyter noteboook run_experiments.
+jupyter noteboook run_experiments.ipynb
 ```
 
 
