@@ -228,10 +228,13 @@ def apply_lfr(X, y, X_test,y_test, dataset):
     df_test = dataset.convert_to_aif(X_test,y_test,'target')
         
     privileged_groups =  [{dataset.protected_att_name:1.0}] 
-    unprivileged_groups = [{dataset.protected_att_name:0.0}] 
+    unprivileged_groups = [{dataset.protected_att_name:0.0}]
+    
+    settings = lfr_settings[dataset.__class__.__name__]
+    
     lfr = LFR(unprivileged_groups=unprivileged_groups, privileged_groups=privileged_groups,
-        k = 10, Ax=0.1, Ay=1.0, Az=2.0, verbose=1, seed=42)
-    lfr.fit(df_aif, maxiter=15000, maxfun=15000)
+        k = settings['k'], Ax=settings['Ax'], Ay=settings['Ay'], Az=settings['Az'], seed=42)
+    lfr.fit(df_aif, maxiter=settings['maxiter'], maxfun=settings['maxfun'])
   
     df_aif = lfr.transform(df_aif) 
     df_test = lfr.transform(df_test)
