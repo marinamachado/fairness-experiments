@@ -58,7 +58,7 @@ def german_class_converter(value):
     else:
         return value
 
-class_converter = np.vectorize(class_converter)
+german_class_converter = np.vectorize(german_class_converter)
 
 class German(Dataset):
     '''Classe derivada da classe Dataset e representa German Dataset'''
@@ -85,7 +85,7 @@ class German(Dataset):
         features_to_drop=self.drop,
         categorical_features=self.categorical,metadata={'label_maps': self.label_map, 'protected_attribute_maps': [self.protected_att_map]})
         
-        self.dataset.labels = class_converter(self.dataset.labels)
+        self.dataset.labels = german_class_converter(self.dataset.labels)
 
         df = self.dataset.convert_to_dataframe()[0].replace(2.0,0.0)
 
