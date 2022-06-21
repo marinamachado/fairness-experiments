@@ -1,0 +1,11 @@
+,dataset,preprocessing,clf_type,params,accuracy,dif_accuracy,balanced_accuracy,dif_balanced_accuracy,recall,dif_recall,precision,dif_precision,fpr,dif_fpr,selection_rate,dif_selection_rate,dif_statistical_parity,dif_equal_opp,dif_avg_odds,disparate_impacto_ratio
+0,Compas,LFR,Random Forest,"{'n_estimators': 120, 'random_state': 42}",0.5445111218249274,0.09713790859305793,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+1,Compas,LFR,Random Forest,"{'n_estimators': 140, 'random_state': 42}",0.5445111218249274,0.09713790859305793,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2,Compas,LFR,Random Forest,"{'n_estimators': 160, 'random_state': 42}",0.5445111218249274,0.09713790859305793,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+3,Compas,LFR,Random Forest,"{'n_estimators': 180, 'random_state': 42}",0.5445111218249274,0.09713790859305793,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+4,Compas,LFR,Random Forest,"{'n_estimators': 200, 'random_state': 42}",0.5445111218249274,0.09713790859305793,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+5,Compas,LFR,Naive Bayes,{},0.5445111218249274,0.09713790859305793,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+6,Compas,LFR,Decision Tree,"{'criterion': 'gini', 'splitter': 'best', 'random_state': 42}",0.5445111218249274,0.09713790859305793,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+7,Compas,LFR,Decision Tree,"{'criterion': 'gini', 'splitter': 'random', 'random_state': 42}",0.5445111218249274,0.09713790859305793,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+8,Compas,LFR,Decision Tree,"{'criterion': 'entropy', 'splitter': 'best', 'random_state': 42}",0.5445111218249274,0.09713790859305793,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+9,Compas,LFR,Decision Tree,"{'criterion': 'entropy', 'splitter': 'random', 'random_state': 42}",0.5445111218249274,0.09713790859305793,0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
