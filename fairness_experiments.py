@@ -123,6 +123,7 @@ def concat_results(*, relative_dir='', file_format='.csv', sep=';'):
 def convert_index(l, privileged_group):
     ''' Função que converte o valor do index para numérico, necessário para utilizar o AIF360
     '''
+    
     if l == privileged_group:
         return 1
     else:
@@ -323,6 +324,15 @@ def kfold(clf, X, y, weights, preprocess_name, dataset, k=2, stratified_by='grou
         
         # Realiza as predições
         y_predict = clf.predict(x_test)
+        
+        y_predict = pd.DataFrame(y_predict, columns=['target'])
+        y_test = pd.DataFrame(y_test, columns=['target'])
+        
+        y_predict.index = convert_index(list(map('/'.join, list(x_test.index))), '1.0')
+        y_predict.index.names = ['group']   
+                    
+        y_test.index = convert_index(list(map('/'.join, list(x_test.index))), '1.0')
+        y_test.index.names = ['group']           
         
         
         # Calcula as medidas de desempenho

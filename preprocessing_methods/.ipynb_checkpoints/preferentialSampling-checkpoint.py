@@ -117,7 +117,6 @@ class PreferentialSampling( BaseEstimator, TransformerMixin ):
                 new_df = new_df.reset_index(drop = True)
                 
             l = new_df[(new_df[self.attr]==grupo['attr']) & (new_df[self.label]==grupo['label'])]
-            print(len(l))
                 
             
         return new_df
