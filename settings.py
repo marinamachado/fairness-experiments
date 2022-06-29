@@ -42,7 +42,7 @@ final_classifiers_settings = {
     'KNN' : [KNeighborsClassifier,
             {'n_neighbors' : [1, 3, 5, 7],'weights':['uniform', 'distance'] }],
     'Logistic Regression' : [LogisticRegression,
-                            {'C': [0.75, 1, 1.25], 'class_weight': [None, 'balanced'] , 'n_jobs' : [-1],'penalty' : ['l1','l2']}],
+                            {'C': [0.75, 1, 1.25], 'class_weight': [None, 'balanced'] , 'n_jobs' : [-1]}],
     'MLP' : [MLPClassifier,
             {'hidden_layer_sizes' : hidden_layer, 'max_iter': [5000], 'alpha': 10.0 ** -np.arange(1, 10,5)}], 
     'Naive Bayes1' : [GaussianNB, {}],
@@ -50,10 +50,6 @@ final_classifiers_settings = {
     
     'Random Forest' : [RandomForestClassifier,
                       {'n_estimators' : np.arange(50, 600, 50),'max_features': ['auto', 'sqrt'], 'n_jobs' : [-1]}],
-    
-    
-    'XGBoost' : [XGBClassifier,
-                {'objective': ['binary:logistic'],'n_estimators' : np.arange(50, 600, 50)}],
     
     'SVM1' : [SVC,
             {'kernel' : ['poly'], 'degree': [2, 3, 4]}],
@@ -64,13 +60,11 @@ final_classifiers_settings_weights = {
     'Decision Tree' : [DecisionTreeClassifier,
                       {'criterion' : ['gini', 'entropy'], 'splitter' : ['best', 'random'],'max_depth': np.arange(3, 16,4)}],
     'Logistic Regression' : [LogisticRegression,
-                            {'C': [0.75, 1, 1.25], 'class_weight': [None, 'balanced'] , 'n_jobs' : [-1],'penalty' : ['l1','l2']}],
+                            {'C': [0.75, 1, 1.25], 'class_weight': [None, 'balanced'] , 'n_jobs' : [-1]}],
     'Naive Bayes1' : [GaussianNB, {}],
     'Naive Bayes2' : [BernoulliNB,{'alpha' : [ 0.5, 0.75, 1.0, 1.25,1.5]}],
     'Random Forest' : [RandomForestClassifier,
                       {'n_estimators' : np.arange(50, 600, 50),'max_features': ['auto', 'sqrt'], 'n_jobs' : [-1]}],
-    'XGBoost' : [XGBClassifier,
-                {'objective': ['binary:logistic'],'n_estimators' : np.arange(50, 600, 50)}],
     'SVM1' : [SVC,
             {'kernel' : ['poly'], 'degree': [2, 3, 4]}],
     'SVM2' : [SVC, {'kernel' : ['rbf','linear'],'gamma': [1,0.1,0.01,0.001]}]
