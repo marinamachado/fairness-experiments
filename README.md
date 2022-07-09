@@ -11,10 +11,10 @@
   * Uniform Sampling
 - **data**: Pasta contendo arquivos de algumas das bases utilizadas
 - **dataset.py**: Classe que representa os _datasets_ utilizados e suas funções
-- **fairness-experiment**: O experimentoe em si, classes e funções necessárias
-- **settings**: Arquivo com as configurações dos classificadores utilizados no experimento
-- **run_experiments**: Notebook com um exemplo de como rodar os algoritmos
-- **results_views**: Script que gera gráficos para visualização dos resultados
+- **fairness-experiment.py**: O experimento em si, classes e funções necessárias
+- **settings.py**: Arquivo com as configurações dos classificadores utilizados no experimento
+- **run_experiments.py**: Notebook com um exemplo de como rodar os algoritmos
+- **graphics.py**: Script que gera gráficos para visualização dos resultados
 
 ## Como executar os experimentos
 
@@ -27,6 +27,10 @@ pip install -r requirements.txt
 ```
 jupyter noteboook run_experiments.ipynb
 ```
+3. Rodar o notebook graphics caso queria uma visualização gráfica de cada método por base de dados
 
+```
+jupyter noteboook graphics.ipynb
+```
 
   
