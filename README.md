@@ -1,5 +1,21 @@
 # Experimentos: pré-processamento de _Fairness in Machine Learning_
 
+## Algoritmo de pré-processamento _Fairness in Machine Learning_
+ - Massaging
+ - Disparate Impact Remover
+ - Reweighing
+ - Uniform Sampling
+ - Preferential Sampling
+
+## Bases de dados
+ - German Credit
+ - Adult
+ - Bank Marketing
+ - COMPAS
+ - Titanic
+ - Arrhythmia
+ - Contraceptive
+ - Drug Consumption 
 
 ## Divisão das Pastas
 
