@@ -27,13 +27,6 @@ classifiers_basic = {
     'Decision Tree' : [DecisionTreeClassifier,{}]
 }
 
-classifiers_settings_test_weights = {
-    'Random Forest': [RandomForestClassifier,
-          {'n_estimators' : np.arange(120, 220, 20)}],
-    'Naive Bayes': [GaussianNB, {}],
-    'Decision Tree' : [DecisionTreeClassifier,
-          {'criterion' : ['gini', 'entropy'], 'splitter' : ['best', 'random']}]
-}
 
 final_classifiers_settings = {
     
@@ -70,15 +63,6 @@ final_classifiers_settings_weights = {
     'SVM2' : [SVC, {'kernel' : ['rbf','linear'],'gamma': [1,0.1,0.01,0.001]}]
 }
 
-lfr_settings = {'German':{'k':10, 'Ax':0.1, 'Ay':1.0, 'Az':2.0,'seed':42,'maxiter':5000,'maxfun':5000},
-                'Titanic':{'k':10, 'Ax':0.1, 'Ay':1.0, 'Az':2.0,'seed':42,'maxiter':5000,'maxfun':5000},
-                'Adult':{'k':10, 'Ax':0.1, 'Ay':1.0, 'Az':2.0,'seed':42,'maxiter':5000,'maxfun':10000},
-                'Compas':{'k':10, 'Ax':0.1, 'Ay':1.0, 'Az':2.0,'seed':42,'maxiter':5000,'maxfun':50000},
-                'Arrhythmia':{'k':5, 'Ax':0.01, 'Ay':1.0, 'Az':50.0,'seed':42,'maxiter':5000,'maxfun':100000},
-                'Contraceptive':{'k':10, 'Ax':0.1, 'Ay':1.0, 'Az':2.0,'seed':42,'maxiter':5000,'maxfun':5000},
-                'Alcohol':{'k':7, 'Ax':0.1, 'Ay':1.0, 'Az':50.0,'seed':42,'maxiter':5000,'maxfun':5000},
-                'Canabis':{'k':5, 'Ax':0.01, 'Ay':1.0, 'Az':50.0,'seed':42,'maxiter':5000,'maxfun':5000},
-                'Heroin':{'k':10, 'Ax':0.01, 'Ay':1.0, 'Az':50.0,'seed':42,'maxiter':5000,'maxfun':5000},'Bank':{}}
 
 
 
