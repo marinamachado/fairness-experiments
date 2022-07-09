@@ -14,7 +14,7 @@ from preprocessing_methods.massaging import Massaging
 from preprocessing_methods.uniformSampling import UniformSampling
 from preprocessing_methods.preferentialSampling import PreferentialSampling
 from aif360.algorithms.preprocessing.reweighing import Reweighing
-from aif360.algorithms.preprocessing import DisparateImpactRemover,LFR
+from aif360.algorithms.preprocessing import DisparateImpactRemover
 
 
 # medidas de desempenho
@@ -219,42 +219,6 @@ def apply_preprocess(preprocess_name, X, y, dataset):
 
         return x_train,y_train, None
 
-       
-
-def apply_lfr(X, y, X_test,y_test, dataset):   
-    ''' Função que aplica o método de pré-processamento LFR
-    '''
-     
-    df_aif = dataset.convert_to_aif(X,y,'target')
-    df_test = dataset.convert_to_aif(X_test,y_test,'target')
-        
-    privileged_groups =  [{dataset.protected_att_name:1.0}] 
-    unprivileged_groups = [{dataset.protected_att_name:0.0}]
-    
-    settings = lfr_settings[dataset.__class__.__name__]
-    
-    lfr = LFR(unprivileged_groups=unprivileged_groups, privileged_groups=privileged_groups,
-        k = settings['k'], Ax=settings['Ax'], Ay=settings['Ay'], Az=settings['Az'], seed=42)
-    lfr.fit(df_aif, maxiter=settings['maxiter'], maxfun=settings['maxfun'])
-  
-    df_aif = lfr.transform(df_aif) 
-    df_test = lfr.transform(df_test)
-        
-    y_train = pd.DataFrame()
-    x_train = pd.DataFrame()
-    y_test = pd.DataFrame()
-    x_test = pd.DataFrame()
-
-    y_train['target'] = df_aif.convert_to_dataframe()[0]['target'].copy()
-    x_train = df_aif.convert_to_dataframe()[0]
-    x_train = x_train.drop(columns = ['target'],axis =1)
-
-    y_test['target'] = df_test.convert_to_dataframe()[0]['target'].copy()
-    x_test = df_test.convert_to_dataframe()[0]
-    x_test = x_test.drop(columns = ['target'],axis =1)
-
-
-    return x_train,y_train,x_test,y_test, None
     
     
 def multindex(X,dataset):
@@ -304,12 +268,8 @@ def kfold(clf, X, y, weights, preprocess_name, dataset, k=2, stratified_by='grou
          
         
         # Aplica os métodos de pré-processamento
-        if(preprocess_name == "LFR"):
-            x_train,y_train,x_test,y_test,weights = apply_lfr(x_train, y_train,x_test,y_test, dataset)
-
-        elif(preprocess_name != "sem pré-processamento"):
-
-            x_train,y_train,weights = apply_preprocess(preprocess_name, x_train, y_train, dataset)
+        if(preprocess_name != "sem pré-processamento"):
+          x_train,y_train,weights = apply_preprocess(preprocess_name, x_train, y_train, dataset)
             
         # Retira o atributo protegido do treino e adiciona como index 
         x_train = multindex(x_train,dataset)
