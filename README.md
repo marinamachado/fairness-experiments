@@ -1,7 +1,7 @@
 # Experimentos: pré-processamento de _Fairness in Machine Learning_
 
 
-## Detalhes
+## Divisão das Pastas
 
 - **img**: Pasta que contém os gráficos gerados no experimento
 - **results**: Pasta que contém as tabelas com os resultados para cada base de dados
